@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/script.js" defer type="module"></script>
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <h1>Anuncios Bienes Raices</h1>
+        <nav id="nav_presentacion">Labo III Parziale Jeremias</nav>
+    </header>
+    <main>
+        <section id="seccion-datos">
+            <article class="article-formulario">
+                <h2 class="titulo-2">Alta Anuncio</h2>
+                <form id="form-anuncio">
+                    <fieldset>
+                        <legend id="legendForm" class="titulo-3">Datos Del Anuncio</legend>
+                        <label for="txtTitulo">Titulo:</label>
+                        <input type="text" id="txtTitulo" name="txtTitulo" placeholder="Titulo" autocomplete="off" required>
+    
+                        <fieldset id="rdoTransaccion">
+                            <legend>Tipo Transaccion</legend>
+                            <input type="radio" name="rdoTransaccion" value="venta" checked>Venta
+                            <br>
+                            <input type="radio" name="rdoTransaccion" value="alquiler">Alquiler
+                            <br>
+                        </fieldset>
+    
+                        <label for="txtDescripcion">Descripcion:</label>
+                        <input type="text" id="txtDescripcion" name="txtDescripcion" placeholder="Descripcion" autocomplete="off" required>
+                        <br>
+    
+                        <label for="txtPrecio">Precio:</label>
+                        <input type="number" id="txtPrecio" name="txtPrecio" placeholder="Precio" min="0" required >
+                        <br>
+    
+                        <label for="txtCantBaños">Baños:</label>
+                        <input type="number" id="txtCantBaños" name="txtCantBaños" placeholder="Baños" min="1" max="4" value="1" required>
+                        <br>
+    
+                        <label for="txtCantAutos">Autos:</label>
+                        <input type="number" id="txtCantAutos" name="txtCantAutos" placeholder="Autos" min="0" max="4" value="0" required>
+                        <br>
+    
+                        <label for="txtCantHabitaciones">Habitaciones:</label>
+                        <input type="number" id="txtCantHabitaciones" name="txtCantHabitaciones" placeholder="Habitaciones" min="1" max="4" value="0" required>
+                        <br>
+                    </fieldset>
+                    <p>
+                        <input id="button_alta_mod" class="botones" type="submit" value="Guardar Anuncio">
+                        <input id="button_eliminar" class="botones" type="button" value="Eliminar Anuncio">
+                        <input id="button_cancelar" class="botones" type="button" value="Cancelar">
+                        <input type="hidden" name="txtId">
+                    </p>
+                </form>
+            </article>
+            <article id="article-anuncio">
+                <h2 class="titulo-2">Anuncio Seleccionado</h2>
+                <div id="contenedor_article-anuncio">
+                    <article>
+                        <p id="titulo" class="titulo-3">titulo</p>
+                        <img src="./images/anuncio4.jpg" alt="">
+                        <p id="descripcion">lorem</p>
+                        <br>
+                        <span id="tipoTransaccion">Transaccion:</span>
+                        <span id="alquiler_venta">lorem</span>
+                        <br>
+                        <span id="signoDolares">US$</span>
+                        <span id="precio">0</span>
+                        <div class="caracteristicas">
+                            <div>
+                                <img src="./images/icono_wc.svg" alt=""><span id="cantBaños">0</span>
+                            </div>
+                            <div>
+                            <img src="./images/icono_estacionamiento.svg" alt=""><span id="cantAutos">0</span>
+                            </div>
+                            <div>
+                                <img src="./images/icono_dormitorio.svg" alt=""><span id="cantHabitaciones">0</span>
+                            </div>
+                        </div>
+                        <input id="boton-ver-propiedad" class="botones" type="button" value="Ver propiedad">
+                    </article>
+                </div>
+            </article>
+
+        </section>
+        
+    </main>
+
+    <section class="seccion-tabla">
+        <h2 class="titulo-2">Lista de anuncios</h2>
+        <div>
+            <div id="spinner">
+                <img src="./images/spinner.gif" alt="">
+            </div>
+            <div id="filtros-tabla">
+                <p id="titulo-filtros" class="titulo-3">Filtros:</p> 
+                <form>
+                    <select name="orden" id="selectOrden">
+                        <option value="precio" selected>Precio</option>
+                        <option value="cantBaños">Cant. Baños</option>
+                        <option value="cantAutos">Cant. Autos</option>
+                        <option value="cantHab">Cant. Habitaciones</option>
+                      </select>
+                      <select name="direccion" id="selectDireccion">
+                        <option value="desc" selected>Mayor A Menor</option>
+                        <option value="asc">Menor A Mayor</option>
+                      </select>
+                      <input id="button_filtrar" class="botones" type="button" value="Filtrar">
+                      <input id="button_cancelar_filtro" class="botones" type="button" value="Cancelar">
+
+                </form>
+            </div>
+            <div id="table"></div>
+        </div>
+    </section>
+    
+
+</body>
+
+</html>
