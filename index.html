@@ -7,122 +7,92 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="./js/script.js" defer type="module"></script>
     <link rel="stylesheet" href="./css/styles.css">
-    <title>Document</title>
+    <title>ABM Superheroes</title>
 </head>
 
 <body>
     <header>
-        <h1>Anuncios Bienes Raices</h1>
-        <nav id="nav_presentacion">Labo III Parziale Jeremias</nav>
+        <div>
+            <img src="./images/logo_header.jpg" alt="">
+        </div>
+        <nav id="nav_presentacion">
+            <ul>
+                <li><a href="./cards.html">Home</a></li>
+                <li><a href="./index.html">ABM Superheroes</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+                
+        </nav>
     </header>
     <main>
         <section id="seccion-datos">
             <article class="article-formulario">
-                <h2 class="titulo-2">Alta Anuncio</h2>
+                <h2 class="titulo-2">Crud Heroes</h2>
                 <form id="form-anuncio">
                     <fieldset>
-                        <legend id="legendForm" class="titulo-3">Datos Del Anuncio</legend>
-                        <label for="txtTitulo">Titulo:</label>
-                        <input type="text" id="txtTitulo" name="txtTitulo" placeholder="Titulo" autocomplete="off" required>
-    
-                        <fieldset id="rdoTransaccion">
-                            <legend>Tipo Transaccion</legend>
-                            <input type="radio" name="rdoTransaccion" value="venta" checked>Venta
-                            <br>
-                            <input type="radio" name="rdoTransaccion" value="alquiler">Alquiler
-                            <br>
+                        <legend id="legendForm" class="titulo-3">Informacion Del Superheroe</legend>
+                        <label for="txtNombre">Nombre:</label>
+                        <input type="text" id="txtNombre" name="txtNombre" placeholder="Ingrese nombre" autocomplete="off" required>
+                        <br>
+                        <label for="txtAlias">Alias:</label>
+                        <input type="text" id="txtAlias" name="txtAlias" placeholder="Ingrese alter-ego" autocomplete="off" required>
+                        <br>
+                        <fieldset id="rdoEditorial">
+                            <legend>Editorial</legend>
+                            <div class="contenedor-radio">
+                                <input type="radio" name="rdoEditorial" value="Marvel" checked>
+                                <img id="img_marvel" src="./images/marvel_ico.webp" alt="">
+                            </div>
+                            <div class="contenedor-radio">
+                                <input  type="radio" name="rdoEditorial" value="DC">
+                            <img id="img_dc" src="./images/dc_ico.png" alt="">
+                            </div>
                         </fieldset>
-    
-                        <label for="txtDescripcion">Descripcion:</label>
-                        <input type="text" id="txtDescripcion" name="txtDescripcion" placeholder="Descripcion" autocomplete="off" required>
-                        <br>
-    
-                        <label for="txtPrecio">Precio:</label>
-                        <input type="number" id="txtPrecio" name="txtPrecio" placeholder="Precio" min="0" required >
-                        <br>
-    
-                        <label for="txtCantBaños">Baños:</label>
-                        <input type="number" id="txtCantBaños" name="txtCantBaños" placeholder="Baños" min="1" max="4" value="1" required>
-                        <br>
-    
-                        <label for="txtCantAutos">Autos:</label>
-                        <input type="number" id="txtCantAutos" name="txtCantAutos" placeholder="Autos" min="0" max="4" value="0" required>
-                        <br>
-    
-                        <label for="txtCantHabitaciones">Habitaciones:</label>
-                        <input type="number" id="txtCantHabitaciones" name="txtCantHabitaciones" placeholder="Habitaciones" min="1" max="4" value="0" required>
+
+                        
+                        <label for="rangeFuerza">Fuerza:</label>
+                        <input type="range" id="rangeFuerza" name="rangeFuerza" min="1" max="800" required>
                         <br>
                     </fieldset>
+                    <label for="selectArma">Arma:</label>
+                    <select name="selectArma" id="selectArma">
+
+                      </select>
+                      <input type="hidden" name="txtId" id="txtId">
                     <p>
-                        <input id="button_alta_mod" class="botones" type="submit" value="Guardar Anuncio">
-                        <input id="button_eliminar" class="botones" type="button" value="Eliminar Anuncio">
+                        <input id="button_alta_mod" class="botones" type="submit" value="Guardar">
+                        <input id="button_eliminar" class="botones" type="button" value="Eliminar Superheroe">
                         <input id="button_cancelar" class="botones" type="button" value="Cancelar">
-                        <input type="hidden" name="txtId">
                     </p>
                 </form>
             </article>
-            <article id="article-anuncio">
-                <h2 class="titulo-2">Anuncio Seleccionado</h2>
-                <div id="contenedor_article-anuncio">
-                    <article>
-                        <p id="titulo" class="titulo-3">titulo</p>
-                        <img src="./images/anuncio4.jpg" alt="">
-                        <p id="descripcion">lorem</p>
-                        <br>
-                        <span id="tipoTransaccion">Transaccion:</span>
-                        <span id="alquiler_venta">lorem</span>
-                        <br>
-                        <span id="signoDolares">US$</span>
-                        <span id="precio">0</span>
-                        <div class="caracteristicas">
-                            <div>
-                                <img src="./images/icono_wc.svg" alt=""><span id="cantBaños">0</span>
-                            </div>
-                            <div>
-                            <img src="./images/icono_estacionamiento.svg" alt=""><span id="cantAutos">0</span>
-                            </div>
-                            <div>
-                                <img src="./images/icono_dormitorio.svg" alt=""><span id="cantHabitaciones">0</span>
-                            </div>
-                        </div>
-                        <input id="boton-ver-propiedad" class="botones" type="button" value="Ver propiedad">
-                    </article>
-                </div>
-            </article>
-
         </section>
         
     </main>
 
     <section class="seccion-tabla">
-        <h2 class="titulo-2">Lista de anuncios</h2>
+        <h2 class="titulo-2">Lista de Superheroes</h2>
         <div>
             <div id="spinner">
                 <img src="./images/spinner.gif" alt="">
             </div>
-            <div id="filtros-tabla">
-                <p id="titulo-filtros" class="titulo-3">Filtros:</p> 
-                <form>
-                    <select name="orden" id="selectOrden">
-                        <option value="precio" selected>Precio</option>
-                        <option value="cantBaños">Cant. Baños</option>
-                        <option value="cantAutos">Cant. Autos</option>
-                        <option value="cantHab">Cant. Habitaciones</option>
-                      </select>
-                      <select name="direccion" id="selectDireccion">
-                        <option value="desc" selected>Mayor A Menor</option>
-                        <option value="asc">Menor A Mayor</option>
-                      </select>
-                      <input id="button_filtrar" class="botones" type="button" value="Filtrar">
-                      <input id="button_cancelar_filtro" class="botones" type="button" value="Cancelar">
-
-                </form>
             </div>
             <div id="table"></div>
         </div>
     </section>
     
+    <footer id="footer">
+        <nav>
+            <ul>
+                <li><a href="./cards.html">Home</a></li>
+                <li><a href="./index.html">ABM Superheroes</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
 
+        <p>Laboratorio III Todos los derechos reservados 2023 &copy;</p>
 </body>
 
 </html>

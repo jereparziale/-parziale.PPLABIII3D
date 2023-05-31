@@ -1,4 +1,4 @@
-export const crearTabla = (data,colorCabecera) => {
+export const crearTabla = (data) => {
   if (!Array.isArray(data)) return null;
 
 
@@ -6,16 +6,15 @@ export const crearTabla = (data,colorCabecera) => {
   const tabla = document.createElement("table");
 
   //le apendeo la cabecera y saco los valores del primer elemento
-  tabla.appendChild(crearCabecera(data[0],colorCabecera));
+  tabla.appendChild(crearCabecera(data[0]));
   tabla.appendChild(crearCuerpo(data));
 
   return tabla;
 };
 
-const crearCabecera = (elemento,colorCabecera) => {
+const crearCabecera = (elemento) => {
   const thead = document.createElement("thead");
   const headRow = document.createElement("tr");
-  headRow.style.setProperty("background-color",colorCabecera);
 
   for (const key in elemento) {
     if(key==="id") continue;
@@ -63,11 +62,12 @@ export const actualizarTabla = (contenedor,data)=>{
     contenedor.removeChild(contenedor.firstElementChild);
   }
   
-  contenedor.appendChild(crearTabla(data,"coral"));
+  contenedor.appendChild(crearTabla(data));
 }
 
 
 export const obtenerUltimoId = (data) => {
+  console.log(data);
   if (!Array.isArray(data) || data.length === 0) {
     return 1;
   }
