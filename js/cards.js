@@ -1,25 +1,42 @@
+import {getSuperheroes} from "../js/ajaxCards.js";
 
-const superheroes = JSON.parse(localStorage.getItem("superheroes")) || [];
-
-
-const crearArticle = (data) => {
-    //recorro el json
+  const crearArticle = (data) => {
     const $seccion = document.getElementById("seccion-cards");
-
     data.forEach((elementoFila) => {
-      const article = document.createElement("article");
+        const article = document.createElement("article");
+        article.classList.add("card", "bg-primary", "text-dark");
+        article.style.width = "18rem";
 
-      for (const key in elementoFila) {
-        const p = document.createElement("p");
-        if(key=="id")continue;
+        const cardBody = document.createElement("div");
+        cardBody.classList.add("card-body");
 
-        p.textContent = key+": "+elementoFila[key];
-    
-        article.appendChild(p);
-       }
-       article.classList.add("class-article");
-       $seccion.appendChild(article);
+        for (const key in elementoFila) {
+            if (key == "id") continue;
+
+            const p = document.createElement("p");
+            p.textContent = key + ": " + elementoFila[key];
+            cardBody.appendChild(p);
+        }
+
+        article.appendChild(cardBody);
+        $seccion.appendChild(article);
     });
-  };
+};
 
-  crearArticle(superheroes);
+async function obtenerSuperheroes() {
+  try {
+    const data = await getSuperheroes();
+    return data; 
+  } catch (error) {
+    console.error(error);
+  }
+}
+let superheroes = [];
+obtenerSuperheroes()
+  .then(data => {
+    superheroes = data;
+    crearArticle(superheroes);
+  })
+  .catch(error => {
+    console.error(error);
+  });

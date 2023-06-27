@@ -2,97 +2,193 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./js/script.js" defer type="module"></script>
-    <link rel="stylesheet" href="./css/styles.css">
-    <title>ABM Superheroes</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="./js/script.js" defer type="module"></script>
+  <link rel="stylesheet" href="./css/styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <title>ABM Superheroes</title>
 </head>
 
 <body>
-    <header>
-        <div>
-            <img src="./images/logo_header.jpg" alt="">
-        </div>
-        <nav id="nav_presentacion">
-            <ul>
-                <li><a href="./cards.html">Home</a></li>
-                <li><a href="./index.html">ABM Superheroes</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Contacto</a></li>
-            </ul>
-                
+  <header id="header">
+    <nav class="navbar navbar-light  bg-transparent">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="./images/logo_header.jpg" alt="" width="30" height="24">
+        </a>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+          <div class="container-fluid">
+            <a class="navbar-brand">Menu</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="./cards.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="./index.html">ABM Superheroes</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Blog</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Contacto</a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </nav>
-    </header>
-    <main>
-        <section id="seccion-datos">
-            <article class="article-formulario">
-                <h2 class="titulo-2">Crud Heroes</h2>
-                <form id="form-anuncio">
-                    <fieldset>
-                        <legend id="legendForm" class="titulo-3">Informacion Del Superheroe</legend>
-                        <label for="txtNombre">Nombre:</label>
-                        <input type="text" id="txtNombre" name="txtNombre" placeholder="Ingrese nombre" autocomplete="off" required>
-                        <br>
-                        <label for="txtAlias">Alias:</label>
-                        <input type="text" id="txtAlias" name="txtAlias" placeholder="Ingrese alter-ego" autocomplete="off" required>
-                        <br>
-                        <fieldset id="rdoEditorial">
-                            <legend>Editorial</legend>
-                            <div class="contenedor-radio">
-                                <input type="radio" name="rdoEditorial" value="Marvel" checked>
-                                <img id="img_marvel" src="./images/marvel_ico.webp" alt="">
-                            </div>
-                            <div class="contenedor-radio">
-                                <input  type="radio" name="rdoEditorial" value="DC">
-                            <img id="img_dc" src="./images/dc_ico.png" alt="">
-                            </div>
-                        </fieldset>
-
-                        
-                        <label for="rangeFuerza">Fuerza:</label>
-                        <input type="range" id="rangeFuerza" name="rangeFuerza" min="1" max="800" required>
-                        <br>
-                    </fieldset>
-                    <label for="selectArma">Arma:</label>
-                    <select name="selectArma" id="selectArma">
-
-                      </select>
-                      <input type="hidden" name="txtId" id="txtId">
-                    <p>
-                        <input id="button_alta_mod" class="botones" type="submit" value="Guardar">
-                        <input id="button_eliminar" class="botones" type="button" value="Eliminar Superheroe">
-                        <input id="button_cancelar" class="botones" type="button" value="Cancelar">
-                    </p>
-                </form>
-            </article>
-        </section>
-        
-    </main>
-
-    <section class="seccion-tabla">
-        <h2 class="titulo-2">Lista de Superheroes</h2>
-        <div>
-            <div id="spinner">
-                <img src="./images/spinner.gif" alt="">
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section id="seccion-datos">
+      <article class="article-formulario">
+        <p class="h2 text-withe text-center">Informacion Superheroes</p>
+        <form id="form-anuncio">
+          <fieldset>
+            <legend id="legendForm" class="titulo-3">Información Del Superhéroe</legend>
+            <div class="mb-3">
+              <label for="txtNombre" class="form-label">Nombre:</label>
+              <input type="text" id="txtNombre" name="txtNombre" class="form-control" placeholder="Ingrese nombre"
+                autocomplete="off" required>
             </div>
+            <div class="mb-3">
+              <label for="txtAlias" class="form-label">Alias:</label>
+              <input type="text" id="txtAlias" name="txtAlias" class="form-control" placeholder="Ingrese alter-ego"
+                autocomplete="off" required>
             </div>
-            <div id="table"></div>
-        </div>
+            <fieldset id="rdoEditorial">
+              <legend id="legend">Editorial:</legend>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="rdoEditorial" value="Marvel" checked>
+                <label class="form-check-label" for="img_marvel">
+                  <img id="img_marvel" src="./images/marvel_ico.webp" alt="" class="img-fluid">
+                </label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="rdoEditorial" value="DC">
+                <label class="form-check-label" for="img_dc">
+                  <img id="img_dc" src="./images/dc_ico.png" alt="" class="img-fluid">
+                </label>
+              </div>
+            </fieldset>
+
+            <div class="mb-3">
+              <label for="rangeFuerza" class="form-label">Fuerza:</label>
+              <input type="range" id="rangeFuerza" name="rangeFuerza" class="form-range" min="1" max="800" required>
+            </div>
+          </fieldset>
+          <div class="mb-3">
+            <label for="selectArma" class="form-label">Arma:</label>
+            <select name="selectArma" id="selectArma" class="form-select"></select>
+          </div>
+          <input type="hidden" name="txtId" id="txtId">
+          <p>
+            <input id="button_alta_mod" class="btn btn-primary" type="submit" value="Guardar">
+            <input id="button_eliminar" class="btn btn-danger" type="button" value="Eliminar Superheroe">
+            <input id="button_cancelar" class="btn btn-secondary" type="button" value="Cancelar">
+          </p>
+        </form>
+
+      </article>
     </section>
-    
-    <footer id="footer">
-        <nav>
-            <ul>
-                <li><a href="./cards.html">Home</a></li>
-                <li><a href="./index.html">ABM Superheroes</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Contacto</a></li>
-            </ul>
-        </nav>
 
-        <p>Laboratorio III Todos los derechos reservados 2023 &copy;</p>
+  </main>
+
+  <section class="seccion-tabla">
+    <h2 class="titulo-2">Lista de Superheroes</h2>
+    <div id="loader">
+      <img src="./images/spinner.gif" alt="">
+    </div>
+    <div id="contenedor-lista">
+      <div id="filtros-tabla">
+        <p id="titulo-filtros" class="titulo-3">Filtros</p>
+        <div id="contenedor-filtros">
+          <div>
+            <label for="selectEditorial" class="titulo-4">Filtrar Editorial:</label>
+            <select class="form-select" aria-label="Default select example" name="orden" id="selectEditorial">
+              <option value="todos" selected>Todos</option>
+              <option value="Marvel">MARVEL</option>
+              <option value="DC">DC COMICS</option>
+            </select>
+          </div>
+          <div>
+            <label for="txtPromedioFuerza" class="titulo-4">Promedio Fuerza:</label>
+            <input type="text" id="txtPromedioFuerza" name="txtPromedioFuerza" autocomplete="off" readonly>
+          </div>
+        </div>
+      </div>
+      <div id="contenedor-checkbox">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="checkbox-nombre" value="nombre" checked name="modTabla">
+          <label class="form-check-label" for="checkbox-nombre">Nombre</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="checkbox-alias" value="alias" checked name="modTabla">
+          <label class="form-check-label" for="checkbox-alias">Alias</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="checkbox-editorial" value="editorial" checked
+            name="modTabla">
+          <label class="form-check-label" for="checkbox-editorial">Editorial</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="checkbox-fuerza" value="fuerza" checked name="modTabla">
+          <label class="form-check-label" for="checkbox-fuerza">Fuerza</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="checkbox-arma" value="arma" checked name="modTabla">
+          <label class="form-check-label" for="checkbox-arma">Arma</label>
+        </div>
+        <div>
+          <input id="button_filtrar" class="botones" type="button" value="Filtrar">
+          <input id="button_cancelar_filtro" class="botones" type="button" value="Cancelar">
+        </div>
+      </div>
+
+      <div id="table"></div>
+
+    </div>
+
+  </section>
+
+  <footer id="footer">
+    <nav class="navbar navbar-light  bg-transparent">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+          <div class="container-fluid">
+            <a class="navbar-brand">Menu</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="./cards.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="./index.html">ABM Superheroes</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Blog</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Contacto</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </nav>
+    <p class="text-end">Laboratorio III Todos los derechos reservados 2023 &copy;</p>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"></script>
 </body>
 
 </html>

@@ -6,7 +6,6 @@
     padding: 0;
   
   }
-  
 
 body{
   background-image: url(../images/fondo_azul.jpg);
@@ -14,56 +13,26 @@ body{
   background-size: cover;
 }
 
-  header{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    border: 10px solid cornflowerblue;
+  img{
+    flex: 0 0 auto;
+    width: 150px;
+    height: 100px;
+    margin-right: 10px; 
   }
-
-nav ul{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    list-style: none;
-    margin: 0; 
-    padding: 0;
-  }
-
+  #header {
+    border: 10px solid #0d6efd;
+    }
   
-  li{
-    margin-right: 10px;
-  }
-  
-  li a{
-    text-decoration: none;
-  }
 
-  h1{
-    background-color: cornflowerblue;
-    margin: 10px 10px;
-    text-align: center;
-    font-size: 3em;
-  }
+
   section{
     display:flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-wrap: wrap;
   }
 
-  
+  article{
+    margin: 10px;
+  }
 
-  .class-article p {
-    padding: 10px;
-    background-color: cornflowerblue;
-    text-transform: capitalize;
-  }
-  .class-article{
-    display: inline-block;
-    width: 200px;
-    height: 200px;
-    margin-bottom: 10px;
-    background-color: cornflowerblue;
-    border: 6px solid rgb(16, 73, 179);
-  }

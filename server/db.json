@@ -1,0 +1,28 @@
+{
+  "superheroes": [
+    {
+      "id": 10,
+      "nombre": "caas",
+      "fuerza": 800,
+      "alias": "caas",
+      "editorial": "DC",
+      "arma": "Escudo"
+    },
+    {
+      "id": 12,
+      "nombre": "cc",
+      "fuerza": 800,
+      "alias": "ccc",
+      "editorial": "DC",
+      "arma": "Flechas"
+    },
+    {
+      "id": 13,
+      "nombre": "xaca",
+      "fuerza": 1,
+      "alias": "caasa",
+      "editorial": "DC",
+      "arma": "Armadura"
+    }
+  ]
+}
